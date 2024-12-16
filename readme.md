@@ -1,32 +1,5 @@
 # Praktikum Pemgrograman Web 2 - Politeknik Negeri Cilacap
 
-# Informasi Tambahan (Penting!!!.)
-
-Proyek ini jika harus di jalankan dengan server maka maka terapkan server tersebut di bagian database.php 
-
-``` php 
-
-    private $host = '160.19.166.42'; // untuk servernya
-    private $db_name = '2D_klp4';   // Untuk database yang akan di jalankan
-    private $username = '2D_klp4';  // masukan username yaang diberikan oleh server
-    private $password = 'rp4jGe]*c@b*lQRt'; // masukan passowrd yang di berikan oleh server
-    private $conn;
-
-```
-
-jika akan menerapkan web ini untuk di jalankan secara local di setiap pc masing masing orang maka ganti setrukturnya menjadi
-
-``` php
-
-    private $host = 'localhost'; // untuk servernya
-    private $db_name = '2D_klp4';   // Untuk database yang akan di jalankan
-    private $username = 'root';  // masukan username yaang diberikan oleh server
-    private $password = ''; // masukan passowrd yang di berikan oleh server
-    private $conn;
-
-```
-
-
 ## Deskripsi Proyek
 Proyek ini merupakan aplikasi web sederhana yang menerapkan arsitektur Model-View-Controller (MVC) dengan menggunakan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini adalah sebagai contoh yang dapat gunakan sebagai acuan bagi masing-masing kelompok dalam mengerjakan tugas.
 
@@ -37,12 +10,12 @@ Tujuan dari praktikum ini adalah untuk memberikan pemahaman yang lebih baik tent
 - **Bahasa Pemrograman:** PHP
 - **Database:** MySQL
 - **Frontend:** HTML, CSS, JavaScript
-- **Version Control:** Git (GitLab)
+- **Version Control:** Git (GitHub)
 - **Web Server:** Apache (dengan .htaccess untuk pengaturan URL)
 
 ## Struktur Proyek
 ```plaintext
-mvc-sample/
+mvc-pweb2-buku/
 ├── app/
 │   ├── controllers/
 │   │   └── UserController.php         # Controller untuk mengelola logika pengguna
@@ -65,8 +38,8 @@ mvc-sample/
 ## Cara Menjalankan Proyek
 1. **Clone Repository:**
    ```bash
-   git clone https://gitlab.com/praktisi-mengajar/politeknik-negeri-cilacap/pemrograman-web/mvc-sample.git
-   cd mvc-sample
+   git clone https://github.com/w1y0n0/mvc-pweb2-buku.git
+   cd mvc-pweb2-buku
    ```
 2. **Jika menggunakan virtual host pada apache xampp:**
    Untuk menjalankan proyek ini pada Apache XAMPP, Anda perlu membuat virtual host:
@@ -78,9 +51,9 @@ mvc-sample/
    - Tambahkan Konfigurasi Virtual Host: Tambahkan konfigurasi berikut di bagian bawah file:
         ```php 
         <VirtualHost *:80>
-            DocumentRoot "C:/xampp/htdocs/mvc-sample/public"
-            ServerName mvc-sample.local
-            <Directory "C:/xampp/htdocs/mvc-sample/public">
+            DocumentRoot "C:/xampp/htdocs/mvc-pweb2-buku/public"
+            ServerName mvc-pweb2-buku.local
+            <Directory "C:/xampp/htdocs/mvc-pweb2-buku/public">
                 AllowOverride All
                 Require all granted
             </Directory>
@@ -93,21 +66,21 @@ mvc-sample/
 
     - Tambahkan baris berikut di bagian bawah:
         ```php 
-        127.0.0.1 mvc-sample.local
+        127.0.0.1 mvc-pweb2-buku.local
         ```
 
     - Restart Apache: Setelah konfigurasi selesai, restart Apache melalui XAMPP Control Panel.
 
-    - Akses Proyek: Buka browser dan akses aplikasi di http://mvc-sample.local.
+    - Akses Proyek: Buka browser dan akses aplikasi di http://mvc-pweb2-buku.local.
 
 3. **Jika menggunakan perintah php -S localhost:8080:**
     Saat menjalankan aplikasi PHP dengan perintah ```php -S localhost:8080```
     server built-in PHP hanya memahami struktur dasar dan tidak mendukung pengaturan URL rewriting seperti pada file ```.htaccess``` di Apache. Oleh karena itu, aplikasi tidak dapat menangani rute dinamis dengan benar dan akan menampilkan ```"Not Found"``` saat mengakses URL selain ```index.php``` langsung.
 
     Langkah yang harus diikuti:
-    - Navigasi ke direktori ```mvc-sample``` dan jalankan server dari dalam folder ```public```, agar ```index.php``` langsung menjadi entry point untuk aplikasi:
+    - Navigasi ke direktori ```mvc-pweb2-buku``` dan jalankan server dari dalam folder ```public```, agar ```index.php``` langsung menjadi entry point untuk aplikasi:
         ```php
-        cd mvc-sample/public
+        cd mvc-pweb2-buku/public
         php -S localhost:8080
         ```
     - Akses Proyek: Buka browser dan akses aplikasi di ```localhost:8080```.
